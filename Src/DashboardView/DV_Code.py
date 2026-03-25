@@ -29,6 +29,7 @@ class DashboardView(ctk.CTkFrame):
         self._card(cards, 1, "Overdue tasks", "1")
         self._card(cards, 2, "Completed this week", "6")
         #-------
+        #Negins Code Changes
 
         # Workload preview
         box = ctk.CTkFrame(self)

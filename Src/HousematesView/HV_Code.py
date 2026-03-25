@@ -21,9 +21,6 @@ class HousematesView(ctk.CTkFrame):
         self.name_entry = ctk.CTkEntry(form, placeholder_text="Name (e.g., Aisha)")
         self.name_entry.grid(row=0, column=0, padx=10, pady=15, sticky="ew")
 
-        self.weight_entry = ctk.CTkEntry(form, placeholder_text="Weighting (optional, e.g., 1.0)")
-        self.weight_entry.grid(row=0, column=1, padx=10, pady=15, sticky="ew")
-
         add_btn = ctk.CTkButton(form, text="Add", command=self._demo_add)
         add_btn.grid(row=0, column=2, padx=10, pady=15, sticky="ew")
 
@@ -35,14 +32,9 @@ class HousematesView(ctk.CTkFrame):
 
     def _demo_add(self):
         name = self.name_entry.get().strip()
-        weight_text= self.weight_entry.get().strip()
         if not name:
             return
-        try:
-            weight=float(weight_text) if weigh_text else 1.0
-        except:
-            weight=1.0
-        self.app.housemates.append({"name":name,"weight":weight,"assigned_poitns":0})
+        self.app.housemates.append({"name":name,"assigned_poitns":0})
         
         #Clearing the entry box test
         self.name_entry.delete(0,"end")
